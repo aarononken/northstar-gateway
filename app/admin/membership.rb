@@ -25,11 +25,11 @@ ActiveAdmin.register Membership do
     end
     actions
   end
-  
+
   filter :child_child_first_name, :as => :string, :label => "First Name"
   filter :child_child_last_name, :as => :string, :label => "Last Name"
-  filter :program_program_name, :as => :select, :collection => Program.all.map(&:program_name), :label => "Program Name"
-  
+  #filter :program_program_name, :as => :select, :collection => Program.all.map(&:program_name), :label => "Program Name"
+
   form do |f|
     f.inputs "Membership Details" do
       f.input :child_id, :as => :select, :collection => Child.all.map{ |c| ["#{c.child_first_name} #{c.child_last_name}", c.id]}

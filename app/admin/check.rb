@@ -13,9 +13,9 @@ ActiveAdmin.register Check do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  
+
   config.per_page = 10
-  
+
   index do
     selectable_column
     column "First Name" do |check|
@@ -35,11 +35,11 @@ ActiveAdmin.register Check do
     end
     actions
   end
-  
+
   filter :child_child_first_name, :as => :string, :label => "First Name"
   filter :child_child_last_name, :as => :string, :label => "Last Name"
   filter :checked_in, :as => :select
-  filter :program_program_name, :as => :select, :collection => Program.all.map(&:program_name), :label => "Program Name"
+  #filter :program_program_name, :as => :select, :collection => Program.all.map(&:program_name), :label => "Program Name"
   filter :created_at, :as => :date_range
 
   form do |f|

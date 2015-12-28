@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: true do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
     t.string   "resource_id",   null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "checks", force: true do |t|
+  create_table "checks", force: :cascade do |t|
     t.integer  "family_id"
     t.integer  "child_id"
     t.boolean  "checked_in", default: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
     t.integer  "program_id"
   end
 
-  create_table "children", force: true do |t|
+  create_table "children", force: :cascade do |t|
     t.string   "child_first_name"
     t.string   "child_last_name"
     t.integer  "family_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "families", force: true do |t|
+  create_table "families", force: :cascade do |t|
     t.string   "parent_first_name"
     t.string   "parent_last_name"
     t.string   "spouse_name"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "memberships", force: true do |t|
+  create_table "memberships", force: :cascade do |t|
     t.integer  "child_id"
     t.integer  "program_id"
     t.datetime "created_at", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20141217173604) do
     t.integer  "family_id"
   end
 
-  create_table "programs", force: true do |t|
+  create_table "programs", force: :cascade do |t|
     t.string   "program_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
