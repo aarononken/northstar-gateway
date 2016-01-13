@@ -47,3 +47,5 @@ Check.create(family_id: 11, child_id: 2, program_id: 2, checked_in: true)
 Check.create(family_id: 11, child_id: 3, program_id: 1, checked_in: true)
 
 AdminUser.create(email:'admin@example.com', password:'password')
+AdminUser.create(email:'aarononken@gmail.com', password:'password')
+AdminUser.create(email:'greg@outwardboundomaha.org', password:'password')
