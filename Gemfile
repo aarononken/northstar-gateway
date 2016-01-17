@@ -9,6 +9,9 @@ gem "devise"
 gem 'thin'
 
 gem 'paperclip', '~> 4.1'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+# Autoprefixer is optional, but recommended. It automatically adds the proper vendor prefixes to your CSS code when it is compiled.
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
