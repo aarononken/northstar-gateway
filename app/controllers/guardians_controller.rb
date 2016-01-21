@@ -5,7 +5,6 @@ class GuardiansController < ApplicationController
 
 	def create
 		@guardian = Guardian.new(guardian_params)
-		@guardian.password = rand(10 ** 5)
 
 		if @guardian.save
 			redirect_to root_url, notice: "Successfully created!"
@@ -19,6 +18,6 @@ class GuardiansController < ApplicationController
 	end
 
 	def guardian_params
-		params.require(:guardian).permit(:guardian_first_name, :guardian_last_name, :password)
+		params.require(:guardian).permit(:guardian_first_name, :guardian_last_name, :family_id, :password)
 	end
 end
