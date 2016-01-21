@@ -16,6 +16,7 @@
 class Family < ActiveRecord::Base
   has_many :children
   has_many :checks
+  has_many :guardians
   
   validates :password, uniqueness: true
   validates :parent_first_name, :parent_last_name, :password, :phone, :address, presence: true
