@@ -1,5 +1,6 @@
 class Guardian < ActiveRecord::Base
   # existing code
+  belongs_to :family
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
 
