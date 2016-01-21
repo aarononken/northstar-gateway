@@ -1,16 +1,8 @@
 class Guardian < ActiveRecord::Base
   # existing code
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+
   belongs_to :family
-
-  validates :password, uniqueness: true
-
-  def self.authenticate(password)
-  	if guardian.password == password
-  		guardian
-  	else
-  		nil
-  	end
-  end
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
 
